@@ -48,7 +48,7 @@
             android:textSize="17sp" />
 
         <EditText
-            android:id="@+id/correoReEditText"
+            android:id="@+id/txtCorreor"
             android:layout_width="349dp"
             android:layout_height="48dp"
             android:layout_marginBottom="10dp"
@@ -58,7 +58,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/contraseñaReEditText"
+            android:id="@+id/txtContraseñar"
             android:layout_width="349dp"
             android:layout_height="48dp"
             android:layout_marginBottom="20dp"
@@ -69,7 +69,7 @@
 
 
         <Button
-            android:id="@+id/registrarButton"
+            android:id="@+id/btnGuardar"
             android:layout_width="349dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"

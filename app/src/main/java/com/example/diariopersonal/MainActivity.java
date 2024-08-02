@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 9001;
     private GoogleSignInClient mGoogleSignInClient;
-    private EditText correotxt, contraseñatxt;
-    private TextView errorlbl;
-    private Button ingresarbtn, registrarsebtn;
-    private ImageButton googlebtn;
+    private EditText correoTxt, contraseñaTxt;
+    private TextView errorLbl;
+    private Button ingresarBtn, registrarseBtn;
+    private ImageButton googleBtn;
     private FirebaseAuth mAuth;
 
     @Override
@@ -54,38 +54,38 @@ public class MainActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         // Conectar las vistas
-        correotxt = findViewById(R.id.txtCorreo);
-        contraseñatxt = findViewById(R.id.txtContraseña);
-        ingresarbtn = findViewById(R.id.btnIngresar);
-        registrarsebtn = findViewById(R.id.btnRegistrarse);
-        googlebtn = findViewById(R.id.btnGoogle);
-        errorlbl = findViewById(R.id.lblError);
+        correoTxt = findViewById(R.id.lblCorreo);
+        contraseñaTxt = findViewById(R.id.lblContraseña);
+        ingresarBtn = findViewById(R.id.btnIngresar);
+        registrarseBtn = findViewById(R.id.btnRegistrarse);
+        googleBtn = findViewById(R.id.btnGoogle);
+        errorLbl = findViewById(R.id.lblError);
 
         // Ocultar el mensaje de error
-        errorlbl.setVisibility(View.GONE);
+        errorLbl.setVisibility(View.GONE);
 
         // Configurar los listeners de los botones
 
-        ingresarbtn.setOnClickListener(new View.OnClickListener() {
+        ingresarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String correo = correotxt.getText().toString();
-                String contraseña = contraseñatxt.getText().toString();
+                String correo = correoTxt.getText().toString();
+                String contraseña = contraseñaTxt.getText().toString();
                 if (correo.isEmpty() || contraseña.isEmpty()) {
-                    errorlbl.setText("Por favor, llena todos los campos");
-                    errorlbl.setVisibility(View.VISIBLE);
+                    errorLbl.setText("Por favor, llena todos los campos");
+                    errorLbl.setVisibility(View.VISIBLE);
                 } else if (!correo.contains("@") || !correo.contains(".")){
-                    errorlbl.setText("Correo inválido");
-                    errorlbl.setVisibility(View.VISIBLE);
+                    errorLbl.setText("Correo inválido");
+                    errorLbl.setVisibility(View.VISIBLE);
                 } else {
                     // Lógica para iniciar sesión con correo y contraseña
                     signIn(correo, contraseña);
-                    errorlbl.setVisibility(View.GONE);
+                    errorLbl.setVisibility(View.GONE);
                 }
             }
         });
 
-        registrarsebtn.setOnClickListener(new View.OnClickListener() {
+        registrarseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Navegar a la actividad de registro
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        googlebtn.setOnClickListener(new View.OnClickListener() {
+        googleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signInWithGoogle();
@@ -120,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
-                            errorlbl.setText("Correo o contraseña incorrectos");
-                            errorlbl.setVisibility(View.VISIBLE);
+                            errorLbl.setText("Correo o contraseña incorrectos");
+                            errorLbl.setVisibility(View.VISIBLE);
                             updateUI(null);
                         }
                     }
@@ -146,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 // Google Sign In falló, actualizar la UI adecuadamente
-                errorlbl.setText("Error al iniciar sesión con Google");
-                errorlbl.setVisibility(View.VISIBLE);
+                errorLbl.setText("Error al iniciar sesión con Google");
+                errorLbl.setVisibility(View.VISIBLE);
                 updateUI(null);
             }
         }

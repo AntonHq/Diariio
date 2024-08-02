@@ -50,7 +50,7 @@
             android:textSize="19sp" />
 
         <EditText
-            android:id="@+id/txtCorreo"
+            android:id="@+id/lblCorreo"
             android:layout_width="349dp"
             android:layout_height="48dp"
             android:layout_marginBottom="5dp"
@@ -59,7 +59,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/txtContraseña"
+            android:id="@+id/lblContraseña"
             android:layout_width="349dp"
             android:layout_height="48dp"
             android:layout_marginBottom="5dp"

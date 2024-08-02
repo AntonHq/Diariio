@@ -26,8 +26,8 @@ public class Settings extends AppCompatActivity {
 
     //instanciar firestore
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    public TextView usuariotxt, correotxt, contraseñatxt;
-    public Button cerrarsesionbtn;
+    public TextView usuarioLbl, correoLbl, contraseñaLbl;
+    public Button cerrarsesionLbl;
 
     public ImageView avatarImgv;
 
@@ -37,10 +37,10 @@ public class Settings extends AppCompatActivity {
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
         setContentView(R.layout.activity_settings);
-        usuariotxt = findViewById(R.id.txtUsuario);
-        correotxt = findViewById(R.id.txtCorreo);
-        contraseñatxt = findViewById(R.id.txtContraseña);
-        cerrarsesionbtn = findViewById(R.id.btnCerrar);
+        usuarioLbl = findViewById(R.id.lblUsuario);
+        correoLbl = findViewById(R.id.lblCorreo);
+        contraseñaLbl = findViewById(R.id.lblContraseña);
+        cerrarsesionLbl = findViewById(R.id.btnCerrar);
         avatarImgv = findViewById(R.id.imgvAvatar);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -64,14 +64,14 @@ public class Settings extends AppCompatActivity {
             //recuperar datos del usuario desde firestore
             db.collection("usuarios").document(user.getUid()).get().addOnSuccessListener(documentSnapshot -> {
                 if (documentSnapshot.exists()) {
-                    usuariotxt.setText(documentSnapshot.getString("usuario"));
-                    correotxt.setText(documentSnapshot.getString("correo"));
-                    contraseñatxt.setText("********");
+                    usuarioLbl.setText(documentSnapshot.getString("usuario"));
+                    correoLbl.setText(documentSnapshot.getString("correo"));
+                    contraseñaLbl.setText("********");
                 }
             });
         }
 
-        cerrarsesionbtn.setOnClickListener(new View.OnClickListener() {
+        cerrarsesionLbl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 logout();

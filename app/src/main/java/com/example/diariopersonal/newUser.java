@@ -1,6 +1,5 @@
 package com.example.diariopersonal;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +18,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.auth.User;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,9 +28,9 @@ public class newUser extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private FirebaseAuth mAuth;
-    private EditText correoEditText, contraseñaEditText, usuarioEditText;
-    private TextView errorTxv;
-    private Button registrarButton;
+    private EditText correorTxt, contraseñarTxt, usuariorTxt;
+    private TextView errorrLbl;
+    private Button guardarBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,39 +41,39 @@ public class newUser extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         // Conectar las vistas
-        correoEditText = findViewById(R.id.correoReEditText);
-        contraseñaEditText = findViewById(R.id.contraseñaReEditText);
-        registrarButton = findViewById(R.id.registrarButton);
-        errorTxv = findViewById(R.id.errortextView);
-        usuarioEditText = findViewById(R.id.usuarioReEditText);
+        correorTxt = findViewById(R.id.txtCorreor);
+        contraseñarTxt = findViewById(R.id.txtContraseñar);
+        guardarBtn = findViewById(R.id.btnGuardar);
+        errorrLbl = findViewById(R.id.lblErrorr);
+        usuariorTxt = findViewById(R.id.txtUsuarior);
 
         // ocultar el mensaje de error
-        errorTxv.setVisibility(View.GONE);
+        errorrLbl.setVisibility(View.GONE);
 
 
         // Configurar el listener del botón de registro
-        registrarButton.setOnClickListener(new View.OnClickListener() {
+       guardarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String correo = correoEditText.getText().toString();
-                String contraseña = contraseñaEditText.getText().toString();
-                String usuario = usuarioEditText.getText().toString();
+                String correo = correorTxt.getText().toString();
+                String contraseña = contraseñarTxt.getText().toString();
+                String usuario = usuariorTxt.getText().toString();
                 if (correo.isEmpty() || contraseña.isEmpty() || usuario.isEmpty()){
-                    errorTxv.setText("Correo o contraseña vacíos");
-                    errorTxv.setVisibility(View.VISIBLE);
+                    errorrLbl.setText("Correo o contraseña vacíos");
+                    errorrLbl.setVisibility(View.VISIBLE);
                 } else if (contraseña.length() < 6){
-                    errorTxv.setText("Contraseña debe tener al menos 6 caracteres");
-                    errorTxv.setVisibility(View.VISIBLE);
+                    errorrLbl.setText("Contraseña debe tener al menos 6 caracteres");
+                    errorrLbl.setVisibility(View.VISIBLE);
                 } else if (!correo.contains("@") || !correo.contains(".")){
-                    errorTxv.setText("Correo inválido");
-                    errorTxv.setVisibility(View.VISIBLE);
+                    errorrLbl.setText("Correo inválido");
+                    errorrLbl.setVisibility(View.VISIBLE);
                 } else if (usuario.length() < 4){
-                    errorTxv.setText("Usuario debe tener al menos 4 caracteres");
-                    errorTxv.setVisibility(View.VISIBLE);
+                    errorrLbl.setText("Usuario debe tener al menos 4 caracteres");
+                    errorrLbl.setVisibility(View.VISIBLE);
                 } else{
                     // Crear cuenta
                     createAccount(correo, contraseña, usuario);
-                    errorTxv.setVisibility(View.GONE);
+                    errorrLbl.setVisibility(View.GONE);
                 }
             }
         });
@@ -137,8 +135,8 @@ public class newUser extends AppCompatActivity {
             startActivity(intent);
         } else {
             // Mostrar un mensaje de error
-            errorTxv.setText("Error interno al Registrar Usuario");
-            errorTxv.setVisibility(View.VISIBLE);
+            errorrLbl.setText("Error interno al Registrar Usuario");
+            errorrLbl.setVisibility(View.VISIBLE);
         }
     }
 }
