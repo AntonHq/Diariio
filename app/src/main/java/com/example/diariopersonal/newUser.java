@@ -28,7 +28,7 @@ public class newUser extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private FirebaseAuth mAuth;
-    private EditText correorTxt, contraseñarTxt, usuariorTxt;
+    private EditText correorTxt, contraseñarTxt, confiContraseñarTxt, usuariorTxt;
     private TextView errorrLbl;
     private Button guardarBtn;
 
@@ -46,6 +46,7 @@ public class newUser extends AppCompatActivity {
         guardarBtn = findViewById(R.id.btnGuardar);
         errorrLbl = findViewById(R.id.lblErrorr);
         usuariorTxt = findViewById(R.id.txtUsuarior);
+        confiContraseñarTxt = findViewById(R.id.txtConfiContraseñar);
 
         // ocultar el mensaje de error
         errorrLbl.setVisibility(View.GONE);
@@ -57,30 +58,33 @@ public class newUser extends AppCompatActivity {
             public void onClick(View v) {
                 String correo = correorTxt.getText().toString();
                 String contraseña = contraseñarTxt.getText().toString();
+                String confiContraseña = confiContraseñarTxt.getText().toString();
                 String usuario = usuariorTxt.getText().toString();
-                if (correo.isEmpty() || contraseña.isEmpty() || usuario.isEmpty()){
-                    errorrLbl.setText("Correo o contraseña vacíos");
+                if (correo.isEmpty() || contraseña.isEmpty() || confiContraseña.isEmpty() || usuario.isEmpty()) {
+                    errorrLbl.setText("Por favor llene todos los campos");
                     errorrLbl.setVisibility(View.VISIBLE);
-                } else if (contraseña.length() < 6){
-                    errorrLbl.setText("Contraseña debe tener al menos 6 caracteres");
-                    errorrLbl.setVisibility(View.VISIBLE);
-                } else if (!correo.contains("@") || !correo.contains(".")){
+                } else if (!correo.contains("@") || !correo.contains(".")) {
                     errorrLbl.setText("Correo inválido");
                     errorrLbl.setVisibility(View.VISIBLE);
-                } else if (usuario.length() < 4){
-                    errorrLbl.setText("Usuario debe tener al menos 4 caracteres");
+                } else if (contraseña.length() < 6) {
+                    errorrLbl.setText("La contraseña debe tener al menos 6 caracteres");
                     errorrLbl.setVisibility(View.VISIBLE);
-                } else{
+                } else if (!contraseña.equals(confiContraseña)) {
+                    errorrLbl.setText("Las contraseñas no coinciden");
+                    errorrLbl.setVisibility(View.VISIBLE);
+                } else {
                     // Crear cuenta
                     createAccount(correo, contraseña, usuario);
                     errorrLbl.setVisibility(View.GONE);
                 }
+                errorrLbl.setText("Error al registrar usuario");
+                errorrLbl.setVisibility(View.VISIBLE);
             }
         });
 }
 
+    // Método para crear una cuenta
     private void createAccount(String email, String password, String username){
-        // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -97,46 +101,31 @@ public class newUser extends AppCompatActivity {
                             // Añadir el usuario a la base de datos
                             db.collection("usuarios").document(user.getUid())
                                     .set(usuario)
-                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if (task.isSuccessful()){
-                                                // Si se registra correctamente mostrar mensaje
-                                                Toast.makeText(newUser.this, "Usuario Registrado en la Base de Datos",
-                                                        Toast.LENGTH_SHORT).show();
-                                            } else {
-                                                // Si falla mostrar mensaje de error
-                                                Toast.makeText(newUser.this, "Error al registrar usuario en la base de datos",
-                                                        Toast.LENGTH_SHORT).show();
-                                            }
-                                        }
+                                    .addOnSuccessListener(aVoid -> {
+                                        Toast.makeText(newUser.this, "Usuario registrado",
+                                                Toast.LENGTH_SHORT).show();
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        Toast.makeText(newUser.this, "Error al registrar usuario",
+                                                Toast.LENGTH_SHORT).show();
                                     });
-
                             updateUI(user);
                         } else {
                             if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                Toast.makeText(newUser.this, "El correo electrónico ya está en uso.",
-                                        Toast.LENGTH_SHORT).show();
+                                errorrLbl.setText("El correo ya está registrado");
                             } else {
-                                Toast.makeText(newUser.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                                errorrLbl.setText("Error al registrar usuario, vuelva a intertarlo más tarde");
                             }
                             updateUI(null);
                         }
                     }
                 });
-        // [END create_user_with_email]
     }
 
     private void updateUI(FirebaseUser user) {
         if (user != null) {
-            // Navegar a la actividad Main del diario
             Intent intent = new Intent(newUser.this, MainActivity.class);
             startActivity(intent);
-        } else {
-            // Mostrar un mensaje de error
-            errorrLbl.setText("Error interno al Registrar Usuario");
-            errorrLbl.setVisibility(View.VISIBLE);
         }
     }
 }
