@@ -28,6 +28,7 @@
         android:text="Ajustes"
         android:textAlignment="center"
         android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/swtTema"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,33 +37,37 @@
         android:id="@+id/swtTema"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto_medium"
+        android:paddingVertical="12dp"
         android:text="Cambiar tema"
         android:textSize="18sp"
-        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/lbl1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Logo"
-        android:layout_marginBottom="16dp"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <TextView
         android:id="@+id/lbl1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
         android:fontFamily="@font/roboto_medium"
+        android:paddingVertical="12dp"
         android:text="@string/cambiar_fuente"
         android:textSize="18sp"
-        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/spnFuentes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/swtTema"
-        android:layout_marginBottom="8dp" />
+        app:layout_constraintTop_toBottomOf="@id/swtTema" />
 
     <Spinner
         android:id="@+id/spnFuentes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,11 +76,13 @@
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@id/spnFuentes" />
+        app:layout_constraintBottom_toTopOf="@+id/imgvAvatar"
+        app:layout_constraintTop_toBottomOf="@id/spnFuentes"
+        tools:layout_editor_absoluteX="16dp" />
 
     <ImageView
         android:id="@+id/imgvAvatar"
@@ -83,7 +90,9 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:contentDescription="avatar"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,9 +134,9 @@
                     android:id="@+id/lblCorreo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/roboto_medium"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -150,33 +159,9 @@
                     android:id="@+id/lblUsuario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/llContraseña"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="Contraseña:"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/lblContraseña"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_weight="1"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -188,17 +173,14 @@
         android:id="@+id/btnEditar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="Editar Datos"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
 
     <Button
         android:id="@+id/btnCerrar"
@@ -208,11 +190,22 @@
         android:text="Cerrar Sesion"
         android:textAllCaps="false"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEditar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEditar" />
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Eliminar Cuenta"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCerrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
