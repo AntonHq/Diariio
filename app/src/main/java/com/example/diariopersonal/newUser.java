@@ -51,7 +51,6 @@ public class newUser extends AppCompatActivity {
         // ocultar el mensaje de error
         errorrLbl.setVisibility(View.GONE);
 
-
         // Configurar el listener del botón de registro
        guardarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +59,7 @@ public class newUser extends AppCompatActivity {
                 String contraseña = contraseñarTxt.getText().toString();
                 String confiContraseña = confiContraseñarTxt.getText().toString();
                 String usuario = usuariorTxt.getText().toString();
+
                 if (correo.isEmpty() || contraseña.isEmpty() || confiContraseña.isEmpty() || usuario.isEmpty()) {
                     errorrLbl.setText("Por favor llene todos los campos");
                     errorrLbl.setVisibility(View.VISIBLE);
@@ -77,8 +77,6 @@ public class newUser extends AppCompatActivity {
                     createAccount(correo, contraseña, usuario);
                     errorrLbl.setVisibility(View.GONE);
                 }
-                errorrLbl.setText("Error al registrar usuario");
-                errorrLbl.setVisibility(View.VISIBLE);
             }
         });
 }
@@ -89,8 +87,9 @@ public class newUser extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        // Verificar si la tarea fue exitosa
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
+                            // Obtener el usuario actual
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             // Crear un nuevo usuario en la base de datos
@@ -110,13 +109,16 @@ public class newUser extends AppCompatActivity {
                                                 Toast.LENGTH_SHORT).show();
                                     });
                             updateUI(user);
-                        } else {
+                        }
+                        else {
+                            // Verificar si el correo ya está registrado
                             if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                 errorrLbl.setText("El correo ya está registrado");
+                                errorrLbl.setVisibility(View.VISIBLE);
                             } else {
-                                errorrLbl.setText("Error al registrar usuario, vuelva a intertarlo más tarde");
+                                errorrLbl.setText("Error al registrar usuario");
+                                errorrLbl.setVisibility(View.VISIBLE);
                             }
-                            updateUI(null);
                         }
                     }
                 });
@@ -126,6 +128,7 @@ public class newUser extends AppCompatActivity {
         if (user != null) {
             Intent intent = new Intent(newUser.this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 }

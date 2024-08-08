@@ -24,9 +24,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.SignInMethodQueryResult;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -159,13 +163,14 @@ public class MainActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        /// Verificar si la tarea fue exitosa
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
+                            // Inicio de sesión exitoso, actualizar la UI con la información del usuario
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
-                            // If sign in fails, display a message to the user.
+                            // Si falla, mostrar un mensaje al usuario
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication Failed.", Toast.LENGTH_SHORT).show();
                             updateUI(null);
@@ -173,12 +178,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
     private void updateUI(FirebaseUser user) {
         if (user != null) {
             // Navegar a la actividad principal del diario
             Intent intent = new Intent(MainActivity.this, Menu.class);
             startActivity(intent);
-            finish(); // Llamar a finish() para que el usuario no pueda volver a la pantalla de inicio de sesión con el botón de retroceso
+            finish();
         } else {
         }
     }

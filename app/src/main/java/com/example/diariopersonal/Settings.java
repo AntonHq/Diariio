@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
@@ -27,8 +28,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Settings extends AppCompatActivity {
 
-    //instanciar firestore
+    //instanciar bd firestore
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     public TextView usuarioLbl, correoLbl;
     public Button cerrarBtn, eliminarBtn;
     public ImageView avatarImgv;
@@ -38,6 +40,7 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
 
         setContentView(R.layout.activity_settings);
         usuarioLbl = findViewById(R.id.lblUsuario);
@@ -50,8 +53,8 @@ public class Settings extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         //referencia al documento del usuario
         DocumentReference docRef = db.collection("usuarios").document(user.getUid());
-        //obtener la primera letra del usuario
 
+        //obtener la primera letra del usuario
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -85,20 +88,11 @@ public class Settings extends AppCompatActivity {
         }
 
         //llamar al metodo para cerrar sesion
-        cerrarBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostrarDialogoConfirmacion("Cerrar sesión", "¿Estás seguro que deseas cerrar sesión?", () -> cerrarSesion());
-            }
-        });
+        cerrarBtn.setOnClickListener(v -> mostrarDialogoConfirmacion("Cerrar sesión", "¿Estás seguro que deseas cerrar sesión?", this::cerrarSesion));
+
 
         //llamar al metodo para eliminar cuenta
-        eliminarBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostrarDialogoConfirmacion("Eliminar cuenta", "¿Estás seguro que deseas eliminar tu cuenta?", () -> eliminarCuenta());
-            }
-        });
+        eliminarBtn.setOnClickListener(v -> mostrarDialogoConfirmacion("Eliminar cuenta", "¿Estás seguro que deseas eliminar tu cuenta?", this::eliminarCuenta));
 
     }
 
@@ -107,17 +101,11 @@ public class Settings extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle(titulo)
                 .setMessage(mensaje)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Si el usuario confirma, se ejecuta la acción pasada como parámetro
-                        accionConfirmar.run();
-                    }
-                })
+                .setPositiveButton(android.R.string.yes, (dialog, which) -> accionConfirmar.run())
                 .setNegativeButton(android.R.string.no, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
-
 
 
     //método para cerrar sesion
@@ -138,10 +126,24 @@ public class Settings extends AppCompatActivity {
     private void eliminarCuenta() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            db.collection("usuarios").document(user.getUid()).delete();
-            user.delete().addOnCompleteListener(task -> {
+            db.collection("usuarios").document(user.getUid()).delete().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    eliminarCuenta();
+                    user.delete().addOnCompleteListener(task1 -> {
+                        if (task1.isSuccessful()) {
+                            SharedPreferences preferences = getSharedPreferences("prefs", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putBoolean("isLoggedIn", false);
+                            editor.apply();
+
+                            Intent intent = new Intent(Settings.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(Settings.this, "Error al eliminar la cuenta: " + task1.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                } else {
+                    Toast.makeText(Settings.this, "Error al eliminar los datos del usuario: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -153,12 +155,9 @@ public class Settings extends AppCompatActivity {
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint();
         paint.setColor(Color.parseColor("#FF4081"));
-        paint.setStyle(Paint.Style.FILL);
-        canvas.drawPaint(paint);
-        paint.setColor(Color.WHITE);
         paint.setTextSize(100);
         paint.setTextAlign(Paint.Align.CENTER);
-        canvas.drawText(String.valueOf(letra), 100, 100, paint);
+        canvas.drawText(String.valueOf(letra), 100, 120, paint);
         avatarImgv.setImageBitmap(bitmap);
     }
 }
