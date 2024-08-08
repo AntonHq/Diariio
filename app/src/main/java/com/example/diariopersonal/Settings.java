@@ -90,7 +90,6 @@ public class Settings extends AppCompatActivity {
         //llamar al metodo para cerrar sesion
         cerrarBtn.setOnClickListener(v -> mostrarDialogoConfirmacion("Cerrar sesión", "¿Estás seguro que deseas cerrar sesión?", this::cerrarSesion));
 
-
         //llamar al metodo para eliminar cuenta
         eliminarBtn.setOnClickListener(v -> mostrarDialogoConfirmacion("Eliminar cuenta", "¿Estás seguro que deseas eliminar tu cuenta?", this::eliminarCuenta));
 
