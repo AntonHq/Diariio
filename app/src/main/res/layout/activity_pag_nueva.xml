@@ -12,13 +12,13 @@
     <TextView
         android:id="@+id/Logo"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/satisfy_regular"
-        android:text="Mi Diario."
+        android:text="Nuevo Secreto...?"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        android:textSize="70sp"
+        android:textSize="57sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
         android:id="@+id/lblEstado"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="32dp"
         android:text="Cambios no guardados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/lblFecha" />
@@ -47,11 +47,11 @@
         android:id="@+id/lblFecha"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:text="07/06/2024"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Logo" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTItulo" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtLayoutContenido"
@@ -59,14 +59,14 @@
         android:layout_height="450dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="32dp"
         app:boxBackgroundMode="none"
         app:layout_constraintBottom_toTopOf="@+id/btnAgregarImagen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTItulo">
+        app:layout_constraintTop_toBottomOf="@+id/lblFecha">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtContenido"
@@ -95,7 +95,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rounded_edittext_background"
         android:elegantTextHeight="false"
@@ -104,11 +104,13 @@
         android:maxLength="30"
         android:singleLine="true"
         android:textAlignment="center"
+        android:textColorHint="#615D5D"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblFecha" />
+        app:layout_constraintTop_toBottomOf="@+id/Logo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

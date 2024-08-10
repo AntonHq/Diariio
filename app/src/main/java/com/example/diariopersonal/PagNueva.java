@@ -1,6 +1,8 @@
 package com.example.diariopersonal;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,25 +25,18 @@ import java.util.Date;
 import java.util.Locale;
 
 public class PagNueva extends AppCompatActivity {
+    private TextView fechaLbl, estadoLbl;
+    private EditText tituloTxt;
+    private TextInputEditText contenidoTxt;
+    private Button guardarBtn, agregarImagenBtn;
+    private DocumentReference notaRef; //Referencia al documento de la nota en Firestore
 
-    //instanciar bd firestore
-    FirebaseFirestore  db = FirebaseFirestore.getInstance();
-
-    //obtener el usuario actual
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-    TextView fechaLbl, estadoLbl;
-    EditText tituloTxt;
-    TextInputEditText contenidoTxt;
-    Button guardarBtn, agregarImagenBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_pag_nueva);
-
-
 
         //inicializar componentes
         fechaLbl = findViewById(R.id.lblFecha);
@@ -54,10 +49,34 @@ public class PagNueva extends AppCompatActivity {
         // Configurar la fecha actual
         fechaLbl.setText(getCurrentDate());
 
+        // Detectar cambios en los campos de texto
+        tituloTxt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                estadoLbl.setText("Cambios no guardados");
+            }
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+
+        contenidoTxt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                estadoLbl.setText("Cambios no guardados");
+            }
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+
         // Configurar los listeners
         guardarBtn.setOnClickListener(v -> saveNote());
         agregarImagenBtn.setOnClickListener(v -> addImage());
-
     }
 
     // Método para obtener la fecha actual
@@ -78,16 +97,19 @@ public class PagNueva extends AppCompatActivity {
             return;
         }
 
-        // Crear una instancia de la nota
-        Nota nota = new Nota(titulo, contenido, fecha, user != null ? user.getUid() : null);
-
-        // Obtener una referencia a la colección "notas"
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("notas")
-                .add(nota)
-                .addOnSuccessListener(documentReference -> {
+
+        if (notaRef == null) {
+            // Crear una nueva nota
+            notaRef = db.collection("notas").document();
+        }
+
+        // Crear o actualizar la nota en Firestore
+        Nota nota = new Nota(titulo, contenido, fecha, user != null ? user.getUid() : null);
+        notaRef.set(nota)
+                .addOnSuccessListener(aVoid -> {
                     estadoLbl.setText("Cambios guardados");
-                    Toast.makeText(PagNueva.this, "Nota guardada con éxito", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PagNueva.this, "Nota guardada/actualizada con éxito", Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
                     Toast.makeText(PagNueva.this, "Error al guardar la nota", Toast.LENGTH_SHORT).show();
