@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\layout_activity_pag_nueva.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\layout\\activity_pag_nueva.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\font_roboto_regular.ttf.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\font\\roboto_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\layout_activity_new_user.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\layout\\activity_new_user.xml"
+    },
+    {
+        "merged": "com.example.diariopersonal.app-debug-42:/layout_activity_pag_nueva.xml.flat",
+        "source": "com.example.diariopersonal.app-main-44:/layout/activity_pag_nueva.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\drawable_rounded_edittext_background.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\drawable\\rounded_edittext_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\layout_activity_todo.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\layout\\activity_todo.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\font_poppins_light.ttf.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\font\\poppins_light.ttf"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\layout_activity_menu.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\font_satisfy_regular.ttf.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\font\\satisfy_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\font_roboto_light.ttf.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\font\\roboto_light.ttf"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\drawable_candado.png.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\drawable\\candado.png"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\font_heebo.ttf.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\font\\heebo.ttf"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\font_roboto_medium.ttf.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\font\\roboto_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\font_poppins_semibold.ttf.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\font\\poppins_semibold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\layout_activity_cambiar_datos.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\layout\\activity_cambiar_datos.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\drawable_rounded_border.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\drawable\\rounded_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\drawable_ayuda.png.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\drawable\\ayuda.png"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\drawable_google.png.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\drawable\\google.png"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\font_poppins_medium.ttf.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\font\\poppins_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-debug-42:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\anton\\.gradle\\daemon\\8.6\\com.example.diariopersonal.app-main-44:\\mipmap-hdpi\\ic_launcher.webp"
+    }
+]

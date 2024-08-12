@@ -1,0 +1,474 @@
+Index: app/src/main/res/layout/activity_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:padding=\"16dp\"\r\n    tools:context=\".Settings\">\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/btnAyuda\"\r\n        android:layout_width=\"48dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:layout_marginEnd=\"16dp\"\r\n        android:layout_marginBottom=\"16dp\"\r\n        android:background=\"@drawable/ayuda\"\r\n        android:contentDescription=\"ayuda\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/Logo\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"100dp\"\r\n        android:fontFamily=\"@font/satisfy_regular\"\r\n        android:text=\"Ajustes\"\r\n        android:textAlignment=\"center\"\r\n        android:textSize=\"48sp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <Switch\r\n        android:id=\"@+id/swtTema\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"@font/roboto_medium\"\r\n        android:text=\"Cambiar tema\"\r\n        android:textSize=\"18sp\"\r\n        android:paddingVertical=\"12dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/Logo\"\r\n        android:layout_marginBottom=\"16dp\"\r\n        tools:ignore=\"UseSwitchCompatOrMaterialXml\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/lbl1\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:fontFamily=\"@font/roboto_medium\"\r\n        android:text=\"@string/cambiar_fuente\"\r\n        android:textSize=\"18sp\"\r\n        android:paddingVertical=\"12dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/swtTema\"\r\n        android:layout_marginBottom=\"8dp\" />\r\n\r\n    <Spinner\r\n        android:id=\"@+id/spnFuentes\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/lbl1\"\r\n        android:layout_marginBottom=\"32dp\" />\r\n\r\n    <View\r\n        android:id=\"@+id/divider2\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginBottom=\"20dp\"\r\n        android:layout_height=\"1dp\"\r\n        android:background=\"?android:attr/listDivider\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/spnFuentes\" />\r\n\r\n    <ImageView\r\n        android:id=\"@+id/imgvAvatar\"\r\n        android:layout_width=\"100dp\"\r\n        android:layout_height=\"100dp\"\r\n        android:layout_gravity=\"center\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:contentDescription=\"avatar\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.498\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/divider2\" />\r\n\r\n    <com.google.android.material.card.MaterialCardView\r\n        android:id=\"@+id/materialCardView\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        app:cardCornerRadius=\"8dp\"\r\n        app:cardElevation=\"4dp\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/imgvAvatar\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\"\r\n            android:padding=\"16dp\">\r\n\r\n            <LinearLayout\r\n                android:id=\"@+id/llCorreo\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginBottom=\"10dp\"\r\n                android:orientation=\"horizontal\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/textView2\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:fontFamily=\"@font/roboto_medium\"\r\n                    android:text=\"Correo:\"\r\n                    android:textSize=\"16sp\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/txtCorreo\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:textColor=\"@color/colorPrimary\"\r\n                    android:layout_marginStart=\"10dp\"\r\n                    android:layout_weight=\"1\"\r\n                    android:textSize=\"16sp\" />\r\n            </LinearLayout>\r\n\r\n            <LinearLayout\r\n                android:id=\"@+id/llUsuario\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginBottom=\"10dp\"\r\n                android:orientation=\"horizontal\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/textView4\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:fontFamily=\"@font/roboto_medium\"\r\n                    android:text=\"Usuario:\"\r\n                    android:textSize=\"16sp\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/txtUsuario\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:textColor=\"@color/colorPrimary\"\r\n                    android:layout_marginStart=\"10dp\"\r\n                    android:layout_weight=\"1\"\r\n                    android:textSize=\"16sp\" />\r\n            </LinearLayout>\r\n\r\n            <LinearLayout\r\n                android:id=\"@+id/llContraseña\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"horizontal\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/textView3\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:fontFamily=\"@font/roboto_medium\"\r\n                    android:text=\"Contraseña:\"\r\n                    android:textSize=\"16sp\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/txtContraseña\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginStart=\"10dp\"\r\n                    android:textColor=\"@color/colorPrimary\"\r\n                    android:layout_weight=\"1\"\r\n                    android:textSize=\"16sp\" />\r\n            </LinearLayout>\r\n\r\n        </LinearLayout>\r\n\r\n    </com.google.android.material.card.MaterialCardView>\r\n\r\n    <Button\r\n        android:id=\"@+id/btnEditar\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:layout_marginBottom=\"288dp\"\r\n        android:backgroundTint=\"@color/colorPrimary\"\r\n        android:text=\"Editar Datos\"\r\n        android:textSize=\"16sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/materialCardView\"\r\n        app:layout_constraintVertical_bias=\"0.0\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btnCerrar\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:backgroundTint=\"@color/colorPrimary\"\r\n        android:text=\"Cerrar Sesion\"\r\n        android:textAllCaps=\"false\"\r\n        android:textSize=\"16sp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/btnEditar\"\r\n        app:layout_constraintVertical_bias=\"0.0\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_settings.xml b/app/src/main/res/layout/activity_settings.xml
+--- a/app/src/main/res/layout/activity_settings.xml	(revision 23710275e9f1c1ac6ab3988bea4028859d1af3ca)
++++ b/app/src/main/res/layout/activity_settings.xml	(date 1722629166510)
+@@ -64,9 +64,9 @@
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
+         app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@id/lbl1"
+-        android:layout_marginBottom="32dp" />
++        app:layout_constraintTop_toBottomOf="@id/lbl1" />
+ 
+     <View
+         android:id="@+id/divider2"
+@@ -122,7 +122,7 @@
+                     android:textSize="16sp" />
+ 
+                 <TextView
+-                    android:id="@+id/txtCorreo"
++                    android:id="@+id/lblCorreo"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textColor="@color/colorPrimary"
+@@ -147,7 +147,7 @@
+                     android:textSize="16sp" />
+ 
+                 <TextView
+-                    android:id="@+id/txtUsuario"
++                    android:id="@+id/lblUsuario"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:textColor="@color/colorPrimary"
+@@ -171,7 +171,7 @@
+                     android:textSize="16sp" />
+ 
+                 <TextView
+-                    android:id="@+id/txtContraseña"
++                    android:id="@+id/lblContraseña"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="10dp"
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/btnAyuda\"\r\n        android:layout_width=\"48dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:layout_marginEnd=\"32dp\"\r\n        android:layout_marginBottom=\"36dp\"\r\n        android:background=\"@drawable/ayuda\"\r\n        android:contentDescription=\"ayuda\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\" />\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/lnLy\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.498\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/Logo\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"107dp\"\r\n            android:fontFamily=\"@font/satisfy_regular\"\r\n            android:text=\"Mi Diario.\"\r\n            android:textAlignment=\"center\"\r\n            android:textColor=\"@color/colorPrimary\"\r\n            android:textSize=\"85sp\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginBottom=\"30dp\"\r\n            android:fontFamily=\"@font/poppins_light\"\r\n            android:text=\"¡Hola de nuevo!\"\r\n            android:textSize=\"19sp\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/txtCorreo\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:fontFamily=\"@font/roboto_regular\"\r\n            android:hint=\"Correo\"\r\n            android:inputType=\"text\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/txtContraseña\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:fontFamily=\"@font/roboto_regular\"\r\n            android:hint=\"Contraseña\"\r\n            android:inputType=\"textPassword\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/lblError\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"25dp\"\r\n            android:layout_marginBottom=\"10dp\"\r\n            android:fontFamily=\"@font/roboto_regular\"\r\n            android:padding=\"5dp\"\r\n            android:text=\"TextView\"\r\n            android:textColor=\"@color/error\"\r\n            android:textSize=\"13dp\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/btnIngresar\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"53dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:backgroundTint=\"@color/colorPrimary\"\r\n            android:fontFamily=\"@font/poppins_medium\"\r\n            android:text=\"Ingresar\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/btnRegistrarse\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"53dp\"\r\n            android:backgroundTint=\"@color/colorPrimary\"\r\n            android:fontFamily=\"@font/poppins_medium\"\r\n            android:text=\"Registrarse\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <ImageButton\r\n            android:id=\"@+id/btnGoogle\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:background=\"@drawable/common_google_signin_btn_icon_light\"\r\n            android:contentDescription=\"google\"\r\n            android:scaleType=\"fitCenter\" />\r\n\r\n\r\n\r\n    </LinearLayout>\r\n\r\n    <Space\r\n        android:id=\"@+id/space\"\r\n        android:layout_width=\"3dp\"\r\n        android:layout_height=\"0dp\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/lnLy\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <Space\r\n        android:id=\"@+id/space2\"\r\n        android:layout_width=\"3dp\"\r\n        android:layout_height=\"0dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/lnLy\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision 23710275e9f1c1ac6ab3988bea4028859d1af3ca)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1722629158483)
+@@ -50,7 +50,7 @@
+             android:textSize="19sp" />
+ 
+         <EditText
+-            android:id="@+id/txtCorreo"
++            android:id="@+id/lblCorreo"
+             android:layout_width="349dp"
+             android:layout_height="48dp"
+             android:layout_marginBottom="5dp"
+@@ -59,7 +59,7 @@
+             android:inputType="text" />
+ 
+         <EditText
+-            android:id="@+id/txtContraseña"
++            android:id="@+id/lblContraseña"
+             android:layout_width="349dp"
+             android:layout_height="48dp"
+             android:layout_marginBottom="5dp"
+Index: app/src/main/java/com/example/diariopersonal/Settings.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.diariopersonal;\r\n\r\nimport android.content.Intent;\r\nimport android.content.SharedPreferences;\r\nimport android.graphics.Bitmap;\r\nimport android.graphics.Canvas;\r\nimport android.graphics.Color;\r\nimport android.graphics.Paint;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.core.view.WindowCompat;\r\n\r\nimport com.google.android.gms.tasks.OnSuccessListener;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\nimport com.google.firebase.firestore.DocumentReference;\r\nimport com.google.firebase.firestore.DocumentSnapshot;\r\nimport com.google.firebase.firestore.FirebaseFirestore;\r\n\r\npublic class Settings extends AppCompatActivity {\r\n\r\n    //instanciar firestore\r\n    private FirebaseFirestore db = FirebaseFirestore.getInstance();\r\n    public TextView usuariotxt, correotxt, contraseñatxt;\r\n    public Button cerrarsesionbtn;\r\n\r\n    public ImageView avatarImgv;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);\r\n\r\n        setContentView(R.layout.activity_settings);\r\n        usuariotxt = findViewById(R.id.txtUsuario);\r\n        correotxt = findViewById(R.id.txtCorreo);\r\n        contraseñatxt = findViewById(R.id.txtContraseña);\r\n        cerrarsesionbtn = findViewById(R.id.btnCerrar);\r\n        avatarImgv = findViewById(R.id.imgvAvatar);\r\n\r\n        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();\r\n\r\n        DocumentReference docRef = db.collection(\"usuarios\").document(user.getUid());\r\n\r\n        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {\r\n            @Override\r\n            public void onSuccess(DocumentSnapshot documentSnapshot) {\r\n                if (documentSnapshot.exists()) {\r\n                    String usuario = documentSnapshot.getString(\"usuario\");\r\n                    if (usuario != null && !usuario.isEmpty()) {\r\n                        char primeraLetra = usuario.charAt(0);\r\n                        generarImagenConLetra(primeraLetra);\r\n                    }\r\n                }\r\n            }\r\n        });\r\n\r\n        if (user != null) {\r\n            //recuperar datos del usuario desde firestore\r\n            db.collection(\"usuarios\").document(user.getUid()).get().addOnSuccessListener(documentSnapshot -> {\r\n                if (documentSnapshot.exists()) {\r\n                    usuariotxt.setText(documentSnapshot.getString(\"usuario\"));\r\n                    correotxt.setText(documentSnapshot.getString(\"correo\"));\r\n                    contraseñatxt.setText(\"********\");\r\n                }\r\n            });\r\n        }\r\n\r\n        cerrarsesionbtn.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                logout();\r\n            }\r\n        });\r\n    }\r\n\r\n    public void generarImagenConLetra(char letra) {\r\n        int size = 200; // Tamaño de la imagen\r\n        Bitmap bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);\r\n        Canvas canvas = new Canvas(bitmap);\r\n\r\n        Paint paint = new Paint();\r\n        paint.setColor(Color.BLACK);\r\n        paint.setTextSize(100);\r\n        paint.setAntiAlias(true);\r\n        paint.setTextAlign(Paint.Align.CENTER);\r\n\r\n        // Dibujar el fondo de la imagen random pero colores claros\r\n        canvas.drawRGB((int) (Math.random() * 128) + 128, (int) (Math.random() * 128) + 128, (int) (Math.random() * 128) + 128);\r\n\r\n        // Dibujar la letra en el centro de la imagen\r\n        canvas.drawText(String.valueOf(letra), size / 2, size / 2 - ((paint.descent() + paint.ascent()) / 2), paint);\r\n\r\n        //hacer imagen circular\r\n        bitmap = Bitmap.createBitmap(bitmap, 0, 0, size, size);\r\n\r\n        // Asignar el Bitmap al ImageView\r\n        avatarImgv.setImageBitmap(bitmap);\r\n    }\r\n\r\n\r\n    private void logout() {\r\n        FirebaseAuth.getInstance().signOut();\r\n\r\n        SharedPreferences preferences = getSharedPreferences(\"prefs\", MODE_PRIVATE);\r\n        SharedPreferences.Editor editor = preferences.edit();\r\n        editor.putBoolean(\"isLoggedIn\", false);\r\n        editor.apply();\r\n\r\n        Intent intent = new Intent(Settings.this, MainActivity.class);\r\n        startActivity(intent);\r\n        finish();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/diariopersonal/Settings.java b/app/src/main/java/com/example/diariopersonal/Settings.java
+--- a/app/src/main/java/com/example/diariopersonal/Settings.java	(revision 23710275e9f1c1ac6ab3988bea4028859d1af3ca)
++++ b/app/src/main/java/com/example/diariopersonal/Settings.java	(date 1722629352141)
+@@ -26,8 +26,8 @@
+ 
+     //instanciar firestore
+     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+-    public TextView usuariotxt, correotxt, contraseñatxt;
+-    public Button cerrarsesionbtn;
++    public TextView usuarioLbl, correoLbl, contraseñaLbl;
++    public Button cerrarsesionLbl;
+ 
+     public ImageView avatarImgv;
+ 
+@@ -37,10 +37,10 @@
+         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+ 
+         setContentView(R.layout.activity_settings);
+-        usuariotxt = findViewById(R.id.txtUsuario);
+-        correotxt = findViewById(R.id.txtCorreo);
+-        contraseñatxt = findViewById(R.id.txtContraseña);
+-        cerrarsesionbtn = findViewById(R.id.btnCerrar);
++        usuarioLbl = findViewById(R.id.lblUsuario);
++        correoLbl = findViewById(R.id.lblCorreo);
++        contraseñaLbl = findViewById(R.id.lblContraseña);
++        cerrarsesionLbl = findViewById(R.id.btnCerrar);
+         avatarImgv = findViewById(R.id.imgvAvatar);
+ 
+         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+@@ -64,14 +64,14 @@
+             //recuperar datos del usuario desde firestore
+             db.collection("usuarios").document(user.getUid()).get().addOnSuccessListener(documentSnapshot -> {
+                 if (documentSnapshot.exists()) {
+-                    usuariotxt.setText(documentSnapshot.getString("usuario"));
+-                    correotxt.setText(documentSnapshot.getString("correo"));
+-                    contraseñatxt.setText("********");
++                    usuarioLbl.setText(documentSnapshot.getString("usuario"));
++                    correoLbl.setText(documentSnapshot.getString("correo"));
++                    contraseñaLbl.setText("********");
+                 }
+             });
+         }
+ 
+-        cerrarsesionbtn.setOnClickListener(new View.OnClickListener() {
++        cerrarsesionLbl.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 logout();
+Index: app/src/main/java/com/example/diariopersonal/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.diariopersonal;\r\n\r\nimport static android.content.ContentValues.TAG;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageButton;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport com.google.android.gms.auth.api.signin.GoogleSignIn;\r\nimport com.google.android.gms.auth.api.signin.GoogleSignInAccount;\r\nimport com.google.android.gms.auth.api.signin.GoogleSignInClient;\r\nimport com.google.android.gms.auth.api.signin.GoogleSignInOptions;\r\nimport com.google.android.gms.common.api.ApiException;\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.firebase.auth.AuthCredential;\r\nimport com.google.firebase.auth.AuthResult;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseUser;\r\nimport com.google.firebase.auth.GoogleAuthProvider;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n\r\n    private static final int RC_SIGN_IN = 9001;\r\n    private GoogleSignInClient mGoogleSignInClient;\r\n    private EditText correotxt, contraseñatxt;\r\n    private TextView errorlbl;\r\n    private Button ingresarbtn, registrarsebtn;\r\n    private ImageButton googlebtn;\r\n    private FirebaseAuth mAuth;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main);\r\n\r\n        // Inicializar Autentificacion Firebase\r\n        mAuth = FirebaseAuth.getInstance();\r\n\r\n        // Configurar Google Sign-In\r\n        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)\r\n                .requestIdToken(getString(R.string.default_web_client_id))\r\n                .requestEmail()\r\n                .build();\r\n        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);\r\n\r\n        // Conectar las vistas\r\n        correotxt = findViewById(R.id.txtCorreo);\r\n        contraseñatxt = findViewById(R.id.txtContraseña);\r\n        ingresarbtn = findViewById(R.id.btnIngresar);\r\n        registrarsebtn = findViewById(R.id.btnRegistrarse);\r\n        googlebtn = findViewById(R.id.btnGoogle);\r\n        errorlbl = findViewById(R.id.lblError);\r\n\r\n        // Ocultar el mensaje de error\r\n        errorlbl.setVisibility(View.GONE);\r\n\r\n        // Configurar los listeners de los botones\r\n\r\n        ingresarbtn.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                String correo = correotxt.getText().toString();\r\n                String contraseña = contraseñatxt.getText().toString();\r\n                if (correo.isEmpty() || contraseña.isEmpty()) {\r\n                    errorlbl.setText(\"Por favor, llena todos los campos\");\r\n                    errorlbl.setVisibility(View.VISIBLE);\r\n                } else if (!correo.contains(\"@\") || !correo.contains(\".\")){\r\n                    errorlbl.setText(\"Correo inválido\");\r\n                    errorlbl.setVisibility(View.VISIBLE);\r\n                } else {\r\n                    // Lógica para iniciar sesión con correo y contraseña\r\n                    signIn(correo, contraseña);\r\n                    errorlbl.setVisibility(View.GONE);\r\n                }\r\n            }\r\n        });\r\n\r\n        registrarsebtn.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                // Navegar a la actividad de registro\r\n                Intent intent = new Intent(MainActivity.this, newUser.class);\r\n                startActivity(intent);\r\n            }\r\n        });\r\n\r\n        googlebtn.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                signInWithGoogle();\r\n            }\r\n        });\r\n    }\r\n\r\n    @Override\r\n    public void onStart() {\r\n        super.onStart();\r\n        FirebaseUser currentUser = mAuth.getCurrentUser();\r\n        if (currentUser != null) {\r\n            updateUI(currentUser);\r\n        }\r\n    }\r\n\r\n    private void signIn(String email, String password) {\r\n        mAuth.signInWithEmailAndPassword(email, password)\r\n                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {\r\n                    @Override\r\n                    public void onComplete(@NonNull Task<AuthResult> task) {\r\n                        if (task.isSuccessful()) {\r\n                            FirebaseUser user = mAuth.getCurrentUser();\r\n                            updateUI(user);\r\n                        } else {\r\n                            errorlbl.setText(\"Correo o contraseña incorrectos\");\r\n                            errorlbl.setVisibility(View.VISIBLE);\r\n                            updateUI(null);\r\n                        }\r\n                    }\r\n                });\r\n    }\r\n\r\n    private void signInWithGoogle() {\r\n        Intent signInIntent = mGoogleSignInClient.getSignInIntent();\r\n        startActivityForResult(signInIntent, RC_SIGN_IN);\r\n    }\r\n\r\n    @Override\r\n    public void onActivityResult(int requestCode, int resultCode, Intent data) {\r\n        super.onActivityResult(requestCode, resultCode, data);\r\n\r\n        // Resultado devuelto al iniciar Intent desde GoogleSignInApi.getSignInIntent(...);\r\n        if (requestCode == RC_SIGN_IN) {\r\n            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);\r\n            try {\r\n                // Google Sign In fue exitoso, autenticar con Firebase\r\n                GoogleSignInAccount account = task.getResult(ApiException.class);\r\n                firebaseAuthWithGoogle(account.getIdToken());\r\n            } catch (ApiException e) {\r\n                // Google Sign In falló, actualizar la UI adecuadamente\r\n                errorlbl.setText(\"Error al iniciar sesión con Google\");\r\n                errorlbl.setVisibility(View.VISIBLE);\r\n                updateUI(null);\r\n            }\r\n        }\r\n    }\r\n\r\n    private void firebaseAuthWithGoogle(String idToken) {\r\n        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);\r\n        mAuth.signInWithCredential(credential)\r\n                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {\r\n                    @Override\r\n                    public void onComplete(@NonNull Task<AuthResult> task) {\r\n                        if (task.isSuccessful()) {\r\n                            // Sign in success, update UI with the signed-in user's information\r\n                            Log.d(TAG, \"signInWithCredential:success\");\r\n                            FirebaseUser user = mAuth.getCurrentUser();\r\n                            updateUI(user);\r\n                        } else {\r\n                            // If sign in fails, display a message to the user.\r\n                            Log.w(TAG, \"signInWithCredential:failure\", task.getException());\r\n                            Toast.makeText(MainActivity.this, \"Authentication Failed.\", Toast.LENGTH_SHORT).show();\r\n                            updateUI(null);\r\n                        }\r\n                    }\r\n                });\r\n    }\r\n    private void updateUI(FirebaseUser user) {\r\n        if (user != null) {\r\n            // Navegar a la actividad principal del diario\r\n            Intent intent = new Intent(MainActivity.this, Menu.class);\r\n            startActivity(intent);\r\n            finish(); // Llamar a finish() para que el usuario no pueda volver a la pantalla de inicio de sesión con el botón de retroceso\r\n        } else {\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/diariopersonal/MainActivity.java b/app/src/main/java/com/example/diariopersonal/MainActivity.java
+--- a/app/src/main/java/com/example/diariopersonal/MainActivity.java	(revision 23710275e9f1c1ac6ab3988bea4028859d1af3ca)
++++ b/app/src/main/java/com/example/diariopersonal/MainActivity.java	(date 1722629158490)
+@@ -32,10 +32,10 @@
+ 
+     private static final int RC_SIGN_IN = 9001;
+     private GoogleSignInClient mGoogleSignInClient;
+-    private EditText correotxt, contraseñatxt;
+-    private TextView errorlbl;
+-    private Button ingresarbtn, registrarsebtn;
+-    private ImageButton googlebtn;
++    private EditText correoTxt, contraseñaTxt;
++    private TextView errorLbl;
++    private Button ingresarBtn, registrarseBtn;
++    private ImageButton googleBtn;
+     private FirebaseAuth mAuth;
+ 
+     @Override
+@@ -54,38 +54,38 @@
+         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+ 
+         // Conectar las vistas
+-        correotxt = findViewById(R.id.txtCorreo);
+-        contraseñatxt = findViewById(R.id.txtContraseña);
+-        ingresarbtn = findViewById(R.id.btnIngresar);
+-        registrarsebtn = findViewById(R.id.btnRegistrarse);
+-        googlebtn = findViewById(R.id.btnGoogle);
+-        errorlbl = findViewById(R.id.lblError);
++        correoTxt = findViewById(R.id.lblCorreo);
++        contraseñaTxt = findViewById(R.id.lblContraseña);
++        ingresarBtn = findViewById(R.id.btnIngresar);
++        registrarseBtn = findViewById(R.id.btnRegistrarse);
++        googleBtn = findViewById(R.id.btnGoogle);
++        errorLbl = findViewById(R.id.lblError);
+ 
+         // Ocultar el mensaje de error
+-        errorlbl.setVisibility(View.GONE);
++        errorLbl.setVisibility(View.GONE);
+ 
+         // Configurar los listeners de los botones
+ 
+-        ingresarbtn.setOnClickListener(new View.OnClickListener() {
++        ingresarBtn.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                String correo = correotxt.getText().toString();
+-                String contraseña = contraseñatxt.getText().toString();
++                String correo = correoTxt.getText().toString();
++                String contraseña = contraseñaTxt.getText().toString();
+                 if (correo.isEmpty() || contraseña.isEmpty()) {
+-                    errorlbl.setText("Por favor, llena todos los campos");
+-                    errorlbl.setVisibility(View.VISIBLE);
++                    errorLbl.setText("Por favor, llena todos los campos");
++                    errorLbl.setVisibility(View.VISIBLE);
+                 } else if (!correo.contains("@") || !correo.contains(".")){
+-                    errorlbl.setText("Correo inválido");
+-                    errorlbl.setVisibility(View.VISIBLE);
++                    errorLbl.setText("Correo inválido");
++                    errorLbl.setVisibility(View.VISIBLE);
+                 } else {
+                     // Lógica para iniciar sesión con correo y contraseña
+                     signIn(correo, contraseña);
+-                    errorlbl.setVisibility(View.GONE);
++                    errorLbl.setVisibility(View.GONE);
+                 }
+             }
+         });
+ 
+-        registrarsebtn.setOnClickListener(new View.OnClickListener() {
++        registrarseBtn.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 // Navegar a la actividad de registro
+@@ -94,7 +94,7 @@
+             }
+         });
+ 
+-        googlebtn.setOnClickListener(new View.OnClickListener() {
++        googleBtn.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 signInWithGoogle();
+@@ -120,8 +120,8 @@
+                             FirebaseUser user = mAuth.getCurrentUser();
+                             updateUI(user);
+                         } else {
+-                            errorlbl.setText("Correo o contraseña incorrectos");
+-                            errorlbl.setVisibility(View.VISIBLE);
++                            errorLbl.setText("Correo o contraseña incorrectos");
++                            errorLbl.setVisibility(View.VISIBLE);
+                             updateUI(null);
+                         }
+                     }
+@@ -146,8 +146,8 @@
+                 firebaseAuthWithGoogle(account.getIdToken());
+             } catch (ApiException e) {
+                 // Google Sign In falló, actualizar la UI adecuadamente
+-                errorlbl.setText("Error al iniciar sesión con Google");
+-                errorlbl.setVisibility(View.VISIBLE);
++                errorLbl.setText("Error al iniciar sesión con Google");
++                errorLbl.setVisibility(View.VISIBLE);
+                 updateUI(null);
+             }
+         }
+Index: app/src/main/res/layout/activity_cambiar_datos.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".CambiarDatos\">\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/btnAyuda\"\r\n        android:layout_width=\"48dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:layout_marginEnd=\"32dp\"\r\n        android:layout_marginBottom=\"36dp\"\r\n        android:background=\"@drawable/ayuda\"\r\n        android:contentDescription=\"ayuda\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\" />\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/lnLy\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.498\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/Logo\"\r\n            android:layout_width=\"336dp\"\r\n            android:layout_height=\"78dp\"\r\n            android:fontFamily=\"@font/satisfy_regular\"\r\n            android:text=\"Ajustes.\"\r\n            android:textAlignment=\"center\"\r\n            android:textSize=\"55sp\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"25dp\"\r\n            android:fontFamily=\"@font/poppins_light\"\r\n            android:text=\"Cambia tu nombre o contraseña.\"\r\n            android:textSize=\"17sp\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/correoReEditText\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:layout_marginBottom=\"10dp\"\r\n            android:ems=\"10\"\r\n            android:fontFamily=\"@font/roboto_regular\"\r\n            android:hint=\"Tu nombre\"\r\n            android:inputType=\"text\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/contraseñaReEditText\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:layout_marginBottom=\"20dp\"\r\n            android:ems=\"10\"\r\n            android:fontFamily=\"@font/roboto_regular\"\r\n            android:hint=\"Tu contraseña\"\r\n            android:inputType=\"textPassword\" />\r\n\r\n\r\n        <Button\r\n            android:id=\"@+id/registrarButton\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:fontFamily=\"@font/poppins_medium\"\r\n            android:backgroundTint=\"@color/colorPrimary\"\r\n            android:text=\"Guardar cambios\"\r\n            android:textSize=\"16sp\" />\r\n\r\n        <Space\r\n            android:layout_width=\"3dp\"\r\n            android:layout_height=\"0dp\"\r\n            app:layout_constraintBottom_toTopOf=\"@+id/lnLy\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n        <Space\r\n            android:layout_width=\"3dp\"\r\n            android:layout_height=\"0dp\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/lnLy\" />\r\n\r\n    </LinearLayout>\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_cambiar_datos.xml b/app/src/main/res/layout/activity_cambiar_datos.xml
+--- a/app/src/main/res/layout/activity_cambiar_datos.xml	(revision 23710275e9f1c1ac6ab3988bea4028859d1af3ca)
++++ b/app/src/main/res/layout/activity_cambiar_datos.xml	(date 1722630180533)
+@@ -48,7 +48,7 @@
+             android:textSize="17sp" />
+ 
+         <EditText
+-            android:id="@+id/correoReEditText"
++            android:id="@+id/txtCorreor"
+             android:layout_width="349dp"
+             android:layout_height="48dp"
+             android:layout_marginBottom="10dp"
+@@ -58,7 +58,7 @@
+             android:inputType="text" />
+ 
+         <EditText
+-            android:id="@+id/contraseñaReEditText"
++            android:id="@+id/txtContraseñar"
+             android:layout_width="349dp"
+             android:layout_height="48dp"
+             android:layout_marginBottom="20dp"
+@@ -69,7 +69,7 @@
+ 
+ 
+         <Button
+-            android:id="@+id/registrarButton"
++            android:id="@+id/btnGuardar"
+             android:layout_width="349dp"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/poppins_medium"
+Index: app/src/main/res/layout/activity_new_user.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/new_user\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".newUser\">\r\n\r\n    <Space\r\n        android:layout_width=\"3dp\"\r\n        android:layout_height=\"0dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/lnLy\" />\r\n\r\n    <Space\r\n        android:layout_width=\"3dp\"\r\n        android:layout_height=\"0dp\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/lnLy\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <ImageButton\r\n        android:id=\"@+id/btnAyuda\"\r\n        android:layout_width=\"48dp\"\r\n        android:layout_height=\"48dp\"\r\n        android:layout_marginEnd=\"28dp\"\r\n        android:layout_marginBottom=\"28dp\"\r\n        android:background=\"@drawable/ayuda\"\r\n        android:contentDescription=\"ayuda\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\" />\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/lnLy\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.498\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/textView\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"105dp\"\r\n            android:fontFamily=\"@font/satisfy_regular\"\r\n            android:text=\"Mi Diario.\"\r\n            android:textColor=\"@color/colorPrimary\"\r\n            android:textAlignment=\"center\"\r\n            android:textSize=\"85sp\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:textSize=\"17sp\"\r\n            android:fontFamily=\"@font/poppins_light\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:layout_marginBottom=\"20dp\"\r\n            android:text=\"¡Bienvenido!\\nComencemos creando tu nueva cuenta.\" />\r\n\r\n\r\n\r\n        <EditText\r\n            android:id=\"@+id/usuarioReEditText\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:layout_marginBottom=\"10dp\"\r\n            android:hint=\"Nombre de Usuario\"\r\n            android:fontFamily=\"@font/roboto_regular\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/correoReEditText\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:layout_marginBottom=\"10dp\"\r\n            android:ems=\"10\"\r\n            android:fontFamily=\"@font/roboto_regular\"\r\n            android:hint=\"Correo\"\r\n            android:inputType=\"text\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/contraseñaReEditText\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:fontFamily=\"@font/roboto_regular\"\r\n            android:hint=\"Contraseña\"\r\n            android:ems=\"10\"\r\n            android:inputType=\"textPassword\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/errortextView\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"25dp\"\r\n            android:layout_marginBottom=\"10dp\"\r\n            android:padding=\"5dp\"\r\n            android:textSize=\"13dp\"\r\n            android:fontFamily=\"@font/roboto_regular\"\r\n            android:textColor=\"@color/error\"\r\n            android:text=\"TextView\" />\r\n\r\n\r\n\r\n        <Button\r\n            android:id=\"@+id/registrarButton\"\r\n            android:layout_width=\"349dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:fontFamily=\"@font/poppins_medium\"\r\n            android:backgroundTint=\"@color/colorPrimary\"\r\n            android:text=\"Guardar\"\r\n            android:textSize=\"16sp\" />\r\n\r\n    </LinearLayout>\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_new_user.xml b/app/src/main/res/layout/activity_new_user.xml
+--- a/app/src/main/res/layout/activity_new_user.xml	(revision 23710275e9f1c1ac6ab3988bea4028859d1af3ca)
++++ b/app/src/main/res/layout/activity_new_user.xml	(date 1722630180527)
+@@ -68,7 +68,7 @@
+ 
+ 
+         <EditText
+-            android:id="@+id/usuarioReEditText"
++            android:id="@+id/txtUsuarior"
+             android:layout_width="349dp"
+             android:layout_height="48dp"
+             android:layout_marginBottom="10dp"
+@@ -76,7 +76,7 @@
+             android:fontFamily="@font/roboto_regular" />
+ 
+         <EditText
+-            android:id="@+id/correoReEditText"
++            android:id="@+id/txtCorreor"
+             android:layout_width="349dp"
+             android:layout_height="48dp"
+             android:layout_marginBottom="10dp"
+@@ -86,16 +86,16 @@
+             android:inputType="text" />
+ 
+         <EditText
+-            android:id="@+id/contraseñaReEditText"
++            android:id="@+id/txtContraseñar"
+             android:layout_width="349dp"
+             android:layout_height="48dp"
++            android:ems="10"
+             android:fontFamily="@font/roboto_regular"
+             android:hint="Contraseña"
+-            android:ems="10"
+             android:inputType="textPassword" />
+ 
+         <TextView
+-            android:id="@+id/errortextView"
++            android:id="@+id/lblErrorr"
+             android:layout_width="349dp"
+             android:layout_height="25dp"
+             android:layout_marginBottom="10dp"
+@@ -108,7 +108,7 @@
+ 
+ 
+         <Button
+-            android:id="@+id/registrarButton"
++            android:id="@+id/btnGuardar"
+             android:layout_width="349dp"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/poppins_medium"
+Index: app/src/main/java/com/example/diariopersonal/newUser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.diariopersonal;\r\n\r\nimport android.annotation.SuppressLint;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.firebase.auth.AuthResult;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.auth.FirebaseAuthUserCollisionException;\r\nimport com.google.firebase.auth.FirebaseUser;\r\nimport com.google.firebase.firestore.FirebaseFirestore;\r\nimport com.google.firebase.firestore.auth.User;\r\n\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\npublic class newUser extends AppCompatActivity {\r\n\r\n    // Inicializar la base de datos firestore\r\n    FirebaseFirestore db = FirebaseFirestore.getInstance();\r\n\r\n    private FirebaseAuth mAuth;\r\n    private EditText correoEditText, contraseñaEditText, usuarioEditText;\r\n    private TextView errorTxv;\r\n    private Button registrarButton;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_new_user);\r\n\r\n        // Inicializar la instancia de Firebase Auth\r\n        mAuth = FirebaseAuth.getInstance();\r\n\r\n        // Conectar las vistas\r\n        correoEditText = findViewById(R.id.correoReEditText);\r\n        contraseñaEditText = findViewById(R.id.contraseñaReEditText);\r\n        registrarButton = findViewById(R.id.registrarButton);\r\n        errorTxv = findViewById(R.id.errortextView);\r\n        usuarioEditText = findViewById(R.id.usuarioReEditText);\r\n\r\n        // ocultar el mensaje de error\r\n        errorTxv.setVisibility(View.GONE);\r\n\r\n\r\n        // Configurar el listener del botón de registro\r\n        registrarButton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                String correo = correoEditText.getText().toString();\r\n                String contraseña = contraseñaEditText.getText().toString();\r\n                String usuario = usuarioEditText.getText().toString();\r\n                if (correo.isEmpty() || contraseña.isEmpty() || usuario.isEmpty()){\r\n                    errorTxv.setText(\"Correo o contraseña vacíos\");\r\n                    errorTxv.setVisibility(View.VISIBLE);\r\n                } else if (contraseña.length() < 6){\r\n                    errorTxv.setText(\"Contraseña debe tener al menos 6 caracteres\");\r\n                    errorTxv.setVisibility(View.VISIBLE);\r\n                } else if (!correo.contains(\"@\") || !correo.contains(\".\")){\r\n                    errorTxv.setText(\"Correo inválido\");\r\n                    errorTxv.setVisibility(View.VISIBLE);\r\n                } else if (usuario.length() < 4){\r\n                    errorTxv.setText(\"Usuario debe tener al menos 4 caracteres\");\r\n                    errorTxv.setVisibility(View.VISIBLE);\r\n                } else{\r\n                    // Crear cuenta\r\n                    createAccount(correo, contraseña, usuario);\r\n                    errorTxv.setVisibility(View.GONE);\r\n                }\r\n            }\r\n        });\r\n}\r\n\r\n    private void createAccount(String email, String password, String username){\r\n        // [START create_user_with_email]\r\n        mAuth.createUserWithEmailAndPassword(email, password)\r\n                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {\r\n                    @Override\r\n                    public void onComplete(@NonNull Task<AuthResult> task) {\r\n                        if (task.isSuccessful()) {\r\n                            // Sign in success, update UI with the signed-in user's information\r\n                            FirebaseUser user = mAuth.getCurrentUser();\r\n\r\n                            // Crear un nuevo usuario en la base de datos\r\n                            Map<String, Object> usuario = new HashMap<>();\r\n                            usuario.put(\"usuario\", username);\r\n                            usuario.put(\"correo\", email);\r\n\r\n                            // Añadir el usuario a la base de datos\r\n                            db.collection(\"usuarios\").document(user.getUid())\r\n                                    .set(usuario)\r\n                                    .addOnCompleteListener(new OnCompleteListener<Void>() {\r\n                                        @Override\r\n                                        public void onComplete(@NonNull Task<Void> task) {\r\n                                            if (task.isSuccessful()){\r\n                                                // Si se registra correctamente mostrar mensaje\r\n                                                Toast.makeText(newUser.this, \"Usuario Registrado en la Base de Datos\",\r\n                                                        Toast.LENGTH_SHORT).show();\r\n                                            } else {\r\n                                                // Si falla mostrar mensaje de error\r\n                                                Toast.makeText(newUser.this, \"Error al registrar usuario en la base de datos\",\r\n                                                        Toast.LENGTH_SHORT).show();\r\n                                            }\r\n                                        }\r\n                                    });\r\n\r\n                            updateUI(user);\r\n                        } else {\r\n                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {\r\n                                Toast.makeText(newUser.this, \"El correo electrónico ya está en uso.\",\r\n                                        Toast.LENGTH_SHORT).show();\r\n                            } else {\r\n                                Toast.makeText(newUser.this, \"Authentication failed.\",\r\n                                        Toast.LENGTH_SHORT).show();\r\n                            }\r\n                            updateUI(null);\r\n                        }\r\n                    }\r\n                });\r\n        // [END create_user_with_email]\r\n    }\r\n\r\n    private void updateUI(FirebaseUser user) {\r\n        if (user != null) {\r\n            // Navegar a la actividad Main del diario\r\n            Intent intent = new Intent(newUser.this, MainActivity.class);\r\n            startActivity(intent);\r\n        } else {\r\n            // Mostrar un mensaje de error\r\n            errorTxv.setText(\"Error interno al Registrar Usuario\");\r\n            errorTxv.setVisibility(View.VISIBLE);\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/diariopersonal/newUser.java b/app/src/main/java/com/example/diariopersonal/newUser.java
+--- a/app/src/main/java/com/example/diariopersonal/newUser.java	(revision 23710275e9f1c1ac6ab3988bea4028859d1af3ca)
++++ b/app/src/main/java/com/example/diariopersonal/newUser.java	(date 1722630266368)
+@@ -1,6 +1,5 @@
+ package com.example.diariopersonal;
+ 
+-import android.annotation.SuppressLint;
+ import android.content.Intent;
+ import android.os.Bundle;
+ import android.view.View;
+@@ -19,7 +18,6 @@
+ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+ import com.google.firebase.auth.FirebaseUser;
+ import com.google.firebase.firestore.FirebaseFirestore;
+-import com.google.firebase.firestore.auth.User;
+ 
+ import java.util.HashMap;
+ import java.util.Map;
+@@ -30,9 +28,9 @@
+     FirebaseFirestore db = FirebaseFirestore.getInstance();
+ 
+     private FirebaseAuth mAuth;
+-    private EditText correoEditText, contraseñaEditText, usuarioEditText;
+-    private TextView errorTxv;
+-    private Button registrarButton;
++    private EditText correorTxt, contraseñarTxt, usuariorTxt;
++    private TextView errorrLbl;
++    private Button guardarBtn;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+@@ -43,39 +41,39 @@
+         mAuth = FirebaseAuth.getInstance();
+ 
+         // Conectar las vistas
+-        correoEditText = findViewById(R.id.correoReEditText);
+-        contraseñaEditText = findViewById(R.id.contraseñaReEditText);
+-        registrarButton = findViewById(R.id.registrarButton);
+-        errorTxv = findViewById(R.id.errortextView);
+-        usuarioEditText = findViewById(R.id.usuarioReEditText);
++        correorTxt = findViewById(R.id.txtCorreor);
++        contraseñarTxt = findViewById(R.id.txtContraseñar);
++        guardarBtn = findViewById(R.id.btnGuardar);
++        errorrLbl = findViewById(R.id.lblErrorr);
++        usuariorTxt = findViewById(R.id.txtUsuarior);
+ 
+         // ocultar el mensaje de error
+-        errorTxv.setVisibility(View.GONE);
++        errorrLbl.setVisibility(View.GONE);
+ 
+ 
+         // Configurar el listener del botón de registro
+-        registrarButton.setOnClickListener(new View.OnClickListener() {
++       guardarBtn.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                String correo = correoEditText.getText().toString();
+-                String contraseña = contraseñaEditText.getText().toString();
+-                String usuario = usuarioEditText.getText().toString();
++                String correo = correorTxt.getText().toString();
++                String contraseña = contraseñarTxt.getText().toString();
++                String usuario = usuariorTxt.getText().toString();
+                 if (correo.isEmpty() || contraseña.isEmpty() || usuario.isEmpty()){
+-                    errorTxv.setText("Correo o contraseña vacíos");
+-                    errorTxv.setVisibility(View.VISIBLE);
++                    errorrLbl.setText("Correo o contraseña vacíos");
++                    errorrLbl.setVisibility(View.VISIBLE);
+                 } else if (contraseña.length() < 6){
+-                    errorTxv.setText("Contraseña debe tener al menos 6 caracteres");
+-                    errorTxv.setVisibility(View.VISIBLE);
++                    errorrLbl.setText("Contraseña debe tener al menos 6 caracteres");
++                    errorrLbl.setVisibility(View.VISIBLE);
+                 } else if (!correo.contains("@") || !correo.contains(".")){
+-                    errorTxv.setText("Correo inválido");
+-                    errorTxv.setVisibility(View.VISIBLE);
++                    errorrLbl.setText("Correo inválido");
++                    errorrLbl.setVisibility(View.VISIBLE);
+                 } else if (usuario.length() < 4){
+-                    errorTxv.setText("Usuario debe tener al menos 4 caracteres");
+-                    errorTxv.setVisibility(View.VISIBLE);
++                    errorrLbl.setText("Usuario debe tener al menos 4 caracteres");
++                    errorrLbl.setVisibility(View.VISIBLE);
+                 } else{
+                     // Crear cuenta
+                     createAccount(correo, contraseña, usuario);
+-                    errorTxv.setVisibility(View.GONE);
++                    errorrLbl.setVisibility(View.GONE);
+                 }
+             }
+         });
+@@ -137,8 +135,8 @@
+             startActivity(intent);
+         } else {
+             // Mostrar un mensaje de error
+-            errorTxv.setText("Error interno al Registrar Usuario");
+-            errorTxv.setVisibility(View.VISIBLE);
++            errorrLbl.setText("Error interno al Registrar Usuario");
++            errorrLbl.setVisibility(View.VISIBLE);
+         }
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_pag_nueva.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".PagNueva\">\r\n\r\n    <!-- Save Button -->\r\n\r\n    <Button\r\n        android:id=\"@+id/registrarButton\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"12dp\"\r\n        android:layout_marginEnd=\"20dp\"\r\n        android:backgroundTint=\"@color/colorPrimary\"\r\n        android:text=\"Guardar\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/lblEstado\"\r\n        android:layout_width=\"212dp\"\r\n        android:layout_height=\"19dp\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:layout_marginTop=\"16dp\"\r\n        android:text=\"Cambios no guardados\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/lblFecha\"\r\n        android:layout_width=\"212dp\"\r\n        android:layout_height=\"19dp\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:layout_marginTop=\"4dp\"\r\n        android:text=\"07/06/2024\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@id/lblEstado\" />\r\n\r\n\r\n    <com.google.android.material.textfield.TextInputLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_marginHorizontal=\"20dp\"\r\n        android:layout_marginBottom=\"15dp\"\r\n        android:layout_marginTop=\"56dp\"\r\n        app:boxBackgroundMode=\"none\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.921\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/registrarButton\"\r\n        app:layout_constraintVertical_bias=\"0.0\">\r\n\r\n        <com.google.android.material.textfield.TextInputEditText\r\n            android:id=\"@+id/txtContenido\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:background=\"@drawable/rounded_edittext_background\"\r\n            android:gravity=\"top|start\"\r\n            android:hint=\"Escribe aquí...\"\r\n            android:scrollbars=\"vertical\" />\r\n    </com.google.android.material.textfield.TextInputLayout>\r\n\r\n    <Button\r\n        android:id=\"@+id/btnAyuda\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginEnd=\"32dp\"\r\n        android:layout_marginBottom=\"40dp\"\r\n        android:text=\"Ayuda\"\r\n        android:backgroundTint=\"@color/colorPrimary\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btnMas\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginEnd=\"32dp\"\r\n        android:layout_marginBottom=\"4dp\"\r\n        android:backgroundTint=\"@color/colorPrimary\"\r\n        android:text=\"Agregar\"\r\n        app:layout_constraintBottom_toTopOf=\"@id/btnAyuda\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\" />\r\n\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_pag_nueva.xml b/app/src/main/res/layout/activity_pag_nueva.xml
+--- a/app/src/main/res/layout/activity_pag_nueva.xml	(revision 23710275e9f1c1ac6ab3988bea4028859d1af3ca)
++++ b/app/src/main/res/layout/activity_pag_nueva.xml	(date 1722630180539)
+@@ -10,7 +10,7 @@
+     <!-- Save Button -->
+ 
+     <Button
+-        android:id="@+id/registrarButton"
++        android:id="@+id/btnGuardar"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="12dp"
+@@ -56,7 +56,7 @@
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.921"
+         app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/registrarButton"
++        app:layout_constraintTop_toBottomOf="@+id/btnGuardar"
+         app:layout_constraintVertical_bias="0.0">
+ 
+         <com.google.android.material.textfield.TextInputEditText

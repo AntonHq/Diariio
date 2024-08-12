@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">388855543174-n9fdvn54gil6u98vljggru7c2eop000i.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">388855543174</string>
+    <string name="google_api_key" translatable="false">AIzaSyBsmFFpcPRiCTcrjtiyoIvGGouSe_bIy8Y</string>
+    <string name="google_app_id" translatable="false">1:388855543174:android:55d9b65d1d9a444bd0e807</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBsmFFpcPRiCTcrjtiyoIvGGouSe_bIy8Y</string>
+    <string name="google_storage_bucket" translatable="false">diario-personal-d538e.appspot.com</string>
+    <string name="project_id" translatable="false">diario-personal-d538e</string>
+</resources>
